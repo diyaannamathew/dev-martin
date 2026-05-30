@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | DEV MARTIN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets\logos\logo_black.png" alt="Logo" class="brand-logo">
+      <a href="index.html" class="brand">DEV MARTIN</a>
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collections.html" class="nav-link">Collections</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="collections.html" class="nav-link">Collections</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-contact">
+      <!-- Hero Image -->
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-copy container">
+        <p class="eyebrow">Contact</p>
+        <h1>Connect with Maison Loré for editorial inquiries and studio appointments.</h1>
+        <p class="hero-text">Share your inquiry below and our atelier will respond promptly.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section container reveal">
+      <div class="grid-two contact-grid">
+        <div class="contact-form-wrap reveal">
+          <p class="eyebrow">Inquiries</p>
+          <h2>Send a message to our studio.</h2>
+          <form class="contact-form" action="#" method="post">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" placeholder="Tell us about your inquiry" required></textarea>
+            </label>
+            <button type="submit" class="button button-primary">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-details reveal">
+          <div class="detail-block">
+            <h3>Email</h3>
+            <p>studio@maisonlore.com</p>
+          </div>
+          <div class="detail-block">
+            <h3>Phone</h3>
+            <p>+1 212 555 0194</p>
+          </div>
+          <div class="detail-block">
+            <h3>Studio</h3>
+            <p>Private appointment studio in New York City. Available for styling and brand collaborations.</p>
+          </div>
+          <div class="detail-block social-connect">
+            <p class="eyebrow">Connect</p>
+            <div class="social-links">
+              <a id="instagramLink" href="https://www.instagram.com/dev_martin2026" class="social-link" aria-label="Instagram" target="_blank" rel="noreferrer noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.205 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.057-1.265-.069-1.644-.069-4.849 0-3.204.013-3.583.069-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
+              </a>
+              <a id="facebookLink" class="social-link" aria-label="Facebook" target="_blank" rel="noreferrer noopener"></a>
+              <a id="pinterestLink" class="social-link" aria-label="Pinterest" target="_blank" rel="noreferrer noopener"></a>
+              <a id="youtubeLink" class="social-link" aria-label="YouTube" target="_blank" rel="noreferrer noopener"></a>
+              <a id="whatsappLink" href="https://wa.me/your_phone_number" class="social-link" aria-label="WhatsApp" target="_blank" rel="noreferrer noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.031 6.172c-3.473 0-6.829 2.592-6.829 5.801 0 1.736.744 3.352 1.993 4.607L5.8 19.574l4.784-1.514c1.188.659 2.506.995 3.905.995 3.473 0 6.824-2.592 6.824-5.8 0-3.209-3.351-5.801-6.824-5.801zm0-2.18c4.543 0 8.24 3.34 8.24 7.452 0 1.735-.545 3.44-1.585 4.909l.868 3.12-3.285-1.042c-1.143.571-2.457.889-3.838.889-4.544 0-8.24-3.339-8.24-7.451C3.79 7.332 7.487 3.992 12.031 3.992z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand">DEV MARTIN</span>
+        <p>Luxury shirts designed for the modern wardrobe.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a id="instagramLink" href="https://www.instagram.com/dev_martin2026" class="social-link" aria-label="Instagram" target="_blank" rel="noreferrer noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.205 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.057-1.265-.069-1.644-.069-4.849 0-3.204.013-3.583.069-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
+        </a>
+        
+
+
+        <a id="whatsappLink" href="https://wa.me/8086893363" class="social-link" aria-label="WhatsApp" target="_blank" rel="noreferrer noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M20.52 3.48A11.82 11.82 0 0 0 12.06 0C5.52 0 .21 5.31.21 11.85c0 2.09.55 4.13 1.59 5.93L0 24l6.4-1.68a11.83 11.83 0 0 0 5.66 1.44h.01c6.53 0 11.85-5.31 11.85-11.85 0-3.16-1.23-6.13-3.4-8.43zm-8.46 18.3a9.88 9.88 0 0 1-5.04-1.38l-.36-.21-3.8 1 1.01-3.7-.23-.38a9.88 9.88 0 0 1-1.52-5.26c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.84 9.84 0 0 1 2.9 7.01c0 5.47-4.45 9.93-9.9 9.93zm5.44-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.03-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.29.49 1.73.63.73.23 1.39.2 1.91.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

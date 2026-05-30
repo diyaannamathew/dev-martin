@@ -1,0 +1,625 @@
+:root {
+  --bg: #f5f0e9;
+  --surface: #fffefb;
+  --text: #1f1a18;
+  --muted: #7b6b61;
+  --border: rgba(31, 26, 24, 0.08);
+  --accent: #a39482;
+  --accent-dark: #6f5e4f;
+  --shadow: 0 24px 80px rgba(31, 26, 24, 0.08);
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.85;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+a {
+  font: inherit;
+}
+
+.container {
+  width: min(1180px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(245, 240, 233, 0.93);
+  border-bottom: 1px solid rgba(31, 26, 24, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+}
+
+.brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+}
+
+.nav-list,
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 0;
+  height: 1px;
+  background: var(--text);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.mobile-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  background: var(--text);
+  margin: 0.35rem 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 88px);
+  display: grid;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Hero Section Background Images - Update the URLs below to change the background */
+.hero-home .hero-image {
+  background-image: url(../assets/images/hero-hero.png);
+  background-color: #e8ddd1;
+}
+
+.hero-collections .hero-image {
+  background-image: url('assets/images/hero-collections.png');
+}
+
+.hero-about .hero-image {
+  background-image: url('assets/images/hero-about.png');
+}
+
+.hero-contact .hero-image {
+  background-image: url('assets/images/hero-contact.png');
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31, 26, 24, 0.5), rgba(31, 26, 24, 0.4));
+  z-index: 1;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 4rem 0;
+}
+
+.hero .eyebrow {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero h1 {
+  color: #ffffff !important;
+}
+
+.hero .hero-text {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero h1,
+.section-head h2,
+.intro-copy h2,
+.panel-copy h2,
+.craft-copy h2,
+.contact-form-wrap h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 4.4rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.hero-text,
+.section-head p,
+.detail-card p,
+.card-copy p,
+.contact-form label span,
+.footer-brand p,
+.contact-details p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  border: 1px solid transparent;
+  padding: 0.95rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.button-primary {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-head {
+  max-width: 720px;
+  margin-bottom: 3rem;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.intro-image img,
+.panel-image img,
+.craft-image img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.featured-collections .collections-grid,
+.collection-grid,
+.lookbook-grid,
+.philosophy-grid,
+.testimonial-grid,
+.details-grid,
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.featured-collections .collections-grid,
+.collection-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.collection-card,
+.lookbook-card,
+.philosophy-card,
+.testimonial-card,
+.detail-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.collection-card img,
+.lookbook-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.collection-card .card-copy,
+.testimonial-card,
+.philosophy-card,
+.detail-card,
+.callout-copy {
+  padding: 2rem;
+}
+
+.collection-card:hover,
+.lookbook-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 70px rgba(31, 26, 24, 0.1);
+}
+
+.collection-card,
+.lookbook-card,
+.philosophy-card,
+.testimonial-card,
+.detail-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lookbook-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.lookbook-card figcaption {
+  padding: 1.25rem 1.75rem 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.signature-style,
+.panel-copy,
+.callout-panel {
+  display: flex;
+  align-items: center;
+}
+
+.style-section .split-panel,
+.featured-panel .split-panel,
+.contact-section .contact-grid {
+  gap: 2.5rem;
+}
+
+.panel-copy h2,
+.craft-copy h2 {
+  margin-bottom: 1.2rem;
+}
+
+.philosophy-grid,
+.details-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.philosophy-card,
+.detail-card {
+  min-height: 260px;
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.testimonial-card {
+  padding: 2rem;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card footer {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid rgba(31, 26, 24, 0.12);
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+  color: var(--text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(163, 148, 130, 0.12);
+}
+
+.contact-form-wrap {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.contact-details {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.detail-block h3 {
+  margin: 0 0 0.65rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 0;
+  align-items: flex-start;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links a,
+.footer-social a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.social-link {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(31, 26, 24, 0.05);
+}
+
+.social-link svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--text);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-cta-section {
+  background: #f0e9df;
+}
+
+.contact-cta {
+  padding: 3.5rem 2rem;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border);
+}
+
+.contact-cta h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.callout-panel {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+}
+
+@media (max-width: 1050px) {
+  .featured-collections .collections-grid,
+  .collection-grid,
+  .lookbook-grid,
+  .philosophy-grid,
+  .testimonial-grid,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-two,
+  .footer-inner,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-copy {
+    padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    padding: 1rem 0;
+  }
+
+  .brand-logo {
+    height: 2rem;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+    background: rgba(245, 240, 233, 0.98);
+    border-top: 1px solid rgba(31, 26, 24, 0.06);
+  }
+
+  body.nav-open .mobile-menu {
+    display: block;
+  }
+
+  .mobile-nav-list {
+    flex-direction: column;
+    padding: 1.5rem 2rem 2rem;
+    gap: 1rem;
+  }
+
+  .hero-copy h1,
+  .panel-copy h2,
+  .craft-copy h2,
+  .contact-form-wrap h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .contact-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-copy,
+  .intro-copy,
+  .panel-copy,
+  .craft-copy,
+  .section-head,
+  .callout-panel,
+  .contact-form-wrap {
+    padding: 0;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero-text,
+  .button {
+    font-size: 0.95rem;
+  }
+}
