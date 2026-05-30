@@ -159,22 +159,21 @@ a {
   z-index: 0;
 }
 
-/* Hero Section Background Images - Update the URLs below to change the background */
 .hero-home .hero-image {
-  background-image: url(../assets/images/hero-hero.png);
+  background-image: url('../assets/images/hero-home.png');
   background-color: #e8ddd1;
 }
 
 .hero-collections .hero-image {
-  background-image: url('assets/images/hero-collections.png');
+  background-image: url('../assets/images/hero-collections.png');
 }
 
 .hero-about .hero-image {
-  background-image: url('assets/images/hero-about.png');
+  background-image: url('../assets/images/hero-about.png');
 }
 
 .hero-contact .hero-image {
-  background-image: url('assets/images/hero-contact.png');
+  background-image: url('../assets/images/hero-contact.png');
 }
 
 .hero::before {
