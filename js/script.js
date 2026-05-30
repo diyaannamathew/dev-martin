@@ -66,3 +66,22 @@ heroButtons.forEach((button) => {
     button.style.transform = 'translateY(0)';
   });
 });
+
+const header = document.querySelector('.site-header');
+const heroImage = document.querySelector('.hero-image');
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('page-visible');
+});
+
+window.addEventListener('scroll', () => {
+  const offset = window.scrollY;
+
+  if (header) {
+    header.classList.toggle('scrolled', offset > 24);
+  }
+
+  if (heroImage) {
+    heroImage.style.backgroundPosition = `center calc(50% + ${offset * 0.18}px)`;
+  }
+});

@@ -154,9 +154,12 @@ a {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   z-index: 0;
+  will-change: transform, background-position;
+  transform: scale(1.05);
+  animation: heroZoom 8s ease-out forwards;
 }
 
 .hero-home .hero-image {
@@ -268,6 +271,202 @@ a {
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+.hero-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.hero-title .split-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(32px);
+  animation: splitIn 0.75s ease forwards;
+}
+
+.hero-title .split-word:nth-child(1) { animation-delay: 0.18s; }
+.hero-title .split-word:nth-child(2) { animation-delay: 0.30s; }
+.hero-title .split-word:nth-child(3) { animation-delay: 0.42s; }
+.hero-title .split-word:nth-child(4) { animation-delay: 0.54s; }
+.hero-title .split-word:nth-child(5) { animation-delay: 0.66s; }
+.hero-title .split-word:nth-child(6) { animation-delay: 0.78s; }
+
+.hero-copy .hero-text,
+.hero-copy .hero-actions {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: revealText 0.75s ease forwards;
+}
+
+.hero-copy .hero-text { animation-delay: 1.1s; }
+.hero-copy .hero-actions { animation-delay: 1.25s; }
+
+.collection-card img {
+  transition: transform 0.7s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.05);
+}
+
+.collection-card .card-copy {
+  transition: transform 0.35s ease;
+}
+
+.collection-card:hover .card-copy {
+  transform: translateY(-5px);
+}
+
+.lookbook-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.lookbook-card img {
+  transition: transform 0.7s ease;
+}
+
+.lookbook-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 26, 24, 0.24);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  color: var(--surface);
+  font-size: 0.95rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.lookbook-card:hover img {
+  transform: scale(1.08);
+}
+
+.lookbook-card:hover .lookbook-overlay {
+  opacity: 1;
+}
+
+.marquee-section {
+  padding: 3rem 0;
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  animation: marquee 18s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-track span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.site-header.scrolled {
+  background: rgba(245, 240, 233, 0.98);
+  backdrop-filter: blur(16px);
+  border-bottom-color: rgba(31, 26, 24, 0.1);
+}
+
+.page-visible {
+  opacity: 1;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes splitIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 980px) {
+  .grid-two,
+  .featured-collections .collections-grid,
+  .lookbook-grid,
+  .philosophy-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding: 2rem 0;
+  }
+
+  .lookbook-card img,
+  .collection-card img {
+    height: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .header-inner {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero {
+    min-height: calc(100vh - 68px);
+  }
+
+  .hero-title {
+    gap: 0.3rem;
+  }
+
+  .hero-title .split-word {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .section {
