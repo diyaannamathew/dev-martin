@@ -1,3 +1,3 @@
-/contact /contact.html 200
-/contact/ /contact.html 200
-/contact.html /contact.html 200
+/contact /contact/ 200
+/contact/ /contact/ 200
+/contact.html /contact/ 200
